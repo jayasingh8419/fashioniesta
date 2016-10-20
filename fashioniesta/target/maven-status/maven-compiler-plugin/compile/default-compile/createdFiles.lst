@@ -1,0 +1,11 @@
+dao\BookDao.class
+dao\ProductsDAO.class
+service\service.class
+daoimpl\ProductsDAOImpl.class
+service\BookServiceImpl.class
+models\Products.class
+models\User.class
+service\BookService.class
+daoimpl\BookDaoImpl.class
+com\spring\mvc\FashioniestaController.class
+models\Book.class
