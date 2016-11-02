@@ -1,49 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-	xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:mvc="http://www.springframework.org/schema/mvc" 
-	xmlns:tx="http://www.springframework.org/schema/tx"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans
-       http://www.springframework.org/schema/beans/spring-beans.xsd
-       http://www.springframework.org/schema/mvc
-       http://www.springframework.org/schema/mvc/spring-mvc.xsd
-       http://www.springframework.org/schema/context
-       http://www.springframework.org/schema/context/spring-context.xsd 
-       http://www.springframework.org/schema/beans
-       http://www.springframework.org/schema/beans/spring-beans.xsd
-       http://www.springframework.org/schema/tx 
-       http://www.springframework.org/schema/tx/spring-tx.xsd">
-       
-       
-       <bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"/>
-<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"/>
-       
-       <mvc:annotation-driven/>
-       <mvc:default-servlet-handler/>
-       <context:annotation-config></context:annotation-config>
-       
-	<context:component-scan base-package="com.spring.mvc" />
-	<mvc:resources mapping="/resources/**" location="/resources/" />
-	
-	<bean id="viewResolver"
-		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix" value="/WEB-INF/views/" />
-		<property name="suffix" value=".jsp" />
-	</bean>
-	<mvc:annotation-driven></mvc:annotation-driven>
-	
-	<bean id="ps" class="service.service"></bean>
- <bean id="pdi" class="daoimpl.ProductsDAOImpl"></bean>
+<beans xsi:schemaLocation="http://www.springframework.org/schema/beans 
+							http://www.springframework.org/schema/beans/spring-beans.xsd 
+							http://www.springframework.org/schema/mvc 
+							http://www.springframework.org/schema/mvc/spring-mvc.xsd 
+							http://www.springframework.org/schema/context 
+							http://www.springframework.org/schema/context/spring-context.xsd 
+							http://www.springframework.org/schema/beans 
+							http://www.springframework.org/schema/beans/spring-beans.xsd 
+							http://www.springframework.org/schema/tx 
+							http://www.springframework.org/schema/tx/spring-tx.xsd" 
+		xmlns:tx="http://www.springframework.org/schema/tx" 
+		xmlns:mvc="http://www.springframework.org/schema/mvc" 
+		xmlns:context="http://www.springframework.org/schema/context" 
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		xmlns="http://www.springframework.org/schema/beans">
+
+<mvc:annotation-driven/>
+<tx:annotation-driven/>
+
+<context:component-scan base-package="controllers"/>
+<context:component-scan base-package="Services"/>
+<context:component-scan base-package="daoimpl"/>
+
+
+
+<mvc:resources location="/resources/" mapping="/resources/**"/>
+
+
+<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" id="viewResolver">
+
+<property value="/WEB-INF/views/" name="prefix"/>
+
+<property value=".jsp" name="suffix"/>
+
+</bean>
+
+
+<!--  <bean class="Services.ProductServicesImpl" id="ps"/>
+
+<bean class="daoimpl.ProductsDAOImpl" id="pdi"/> -->
  
-<!--  <bean id="bookService" class="service.BookServiceImpl"></bean>
- <bean id="bookDao" class="daoimpl.BookDaoImpl"></bean>
-  -->
- 
-  <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
-        <property name="basename" value="messages" />
-    </bean>
-    
 </beans>
-
-
