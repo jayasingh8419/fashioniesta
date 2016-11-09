@@ -25,21 +25,21 @@
 			<li><a href="<c:url value="/home"/>">Home</a></li>
 			<li><a href="<c:url value="/about"/>">About us</a></li>
 			
-			<!--  User has logged in  -->
+			<%-- <%-- <!--  User has logged in  -->
 		<c:if test="${pageContext.request.userPrincipal.name!=null}" >
 		<security:authorize ifAnyGranted="ROLE_ADMIN">
-				<li><a href="<c:url value="/admin/book/addBook"/>">Add New
+				<li><a href="<c:url value="/"/>">Add New
 						Book</a></li>
 		</security:authorize>
 			<li><a href="<c:url value="/getAllBooks"/>">Browse All Books</a></li>		
 			<li><a>Welcome ${pageContext.request.userPrincipal.name }</a></li>
 			<li><a href="<c:url value="/j_spring_security_logout"></c:url>">logout</a></li>
-		</c:if >
+		</c:if > --%>
 		
 		<!--  when the user not logged in -->
-		<c:if test="${pageContext.request.userPrincipal.name==null}">
+		<c:if test="${pageContext.request.userPrincipal.name==null}"> --%>
 		<li><a href="<c:url value="login"></c:url>">login</a></li>
-		<li><a href="">Register</a>
+		<li><a href="<c:url value="registration"></c:url>">Register</a></li>
 		</c:if>
 		</ul>
 	</div>

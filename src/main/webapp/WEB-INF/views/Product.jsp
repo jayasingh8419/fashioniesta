@@ -145,12 +145,12 @@ src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></scrip
 			<td>${products.description}</td>
 			<td>${products.price}</td>
 			<td>${products.category}</td>
-			<tr><td><form:input type="file" path="productImage" /></td></tr>
+			<%-- <tr><td><form:input type="file" path="productImage" /></td></tr> --%>
 			
-			<security:authorize ifAnyGranted="ROLE_ADMIN">
-		<%-- <a href="admin/delete/${b.isbn }"><span class="glyphicon glyphicon-trash"></span></a>
-		<a href="admin/book/editBook/${b.isbn }"><span class="glyphicon glyphicon-edit"></span></a> --%>
-		</security:authorize>
+			<%-- <security:authorize ifAnyGranted="ROLE_ADMIN">
+		<a href="admin/delete/${b.isbn }"><span class="glyphicon glyphicon-trash"></span></a>
+		<a href="admin/book/editBook/${b.isbn }"><span class="glyphicon glyphicon-edit"></span></a>
+		</security:authorize> --%>
 			
 			 <td><a href="<c:url value='/edit/${products.id}' />" >Edit</a></td>
 			<td><a href="<c:url value='/remove/${products.id}' />" >Delete</a></td> 

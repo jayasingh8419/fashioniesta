@@ -1,5 +1,8 @@
 package controllers;
 
+import java.io.File;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,6 +16,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import Models.Products;
@@ -47,7 +51,10 @@ public class FashioniestaController {
 			this.psi.updateProducts(p);
 		}
 		return "redirect:/stock";
+		
 	}
+
+	
 	
 	@RequestMapping("/remove/{id}")
 	public String removeProducts(@PathVariable("id")int id){
