@@ -31,8 +31,9 @@ src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></scrip
 	Add Products
 </h1>
 <c:url var="addAction" value="/products/add" ></c:url>
+				<div align="center">	
+<form:form method="post" action="${addAction}" commandName="products" enctype="multipart/form-data">
 
-<form:form action="${addAction}" commandName="products">
 <table>
 	<c:if test="${!empty product.name}">
 	<tr>
@@ -102,6 +103,11 @@ src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></scrip
 			<form:input path="Category" />
 		</td> 
 	</tr>
+	
+	<tr><td><form:label path="productImage"></form:label></td>
+	<tr><td><form:input type="file" path="productImage" /></td></tr>
+	
+	
 	<tr>
 		<td colspan="2">
 			<c:if test="${!empty product.name}">
@@ -116,9 +122,6 @@ src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></scrip
 	</tr>
 </table>	
 </form:form>
-
-<c:url value="/admin/book/addBook" var="url"></c:url> 
-	<form:form method="post" action="${url}" commandName="bookFormObj" enctype="multipart/form-data">
 
 <br>
  <h3>Products List</h3>
@@ -145,23 +148,24 @@ src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></scrip
 			<td>${products.description}</td>
 			<td>${products.price}</td>
 			<td>${products.category}</td>
-			<tr><td><form:input type="file" path="productImage" /></td></tr>
+			<%-- <tr><td><form:input type="file" path="productImage" /></td></tr> --%>
 			
-			<security:authorize ifAnyGranted="ROLE_ADMIN">
-		<%-- <a href="admin/delete/${b.isbn }"><span class="glyphicon glyphicon-trash"></span></a>
-		<a href="admin/book/editBook/${b.isbn }"><span class="glyphicon glyphicon-edit"></span></a> --%>
-		</security:authorize>
+			<%-- <security:authorize ifAnyGranted="ROLE_ADMIN">
+		<a href="admin/delete/${b.isbn }"><span class="glyphicon glyphicon-trash"></span></a>
+		<a href="admin/book/editBook/${b.isbn }"><span class="glyphicon glyphicon-edit"></span></a>
+		</security:authorize> --%>
 			
 			 <td><a href="<c:url value='/edit/${products.id}' />" >Edit</a></td>
 			<td><a href="<c:url value='/remove/${products.id}' />" >Delete</a></td> 
 		</tr>
 	</c:forEach>
 	</table>
+	
 </c:if>
 </div>
 </body>
 </html>
-</form:form>
+
 <script>
 $(document).ready(function(){
     $('#tg').dataTable();

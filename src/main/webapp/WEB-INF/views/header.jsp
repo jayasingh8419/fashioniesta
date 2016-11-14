@@ -37,7 +37,7 @@
 		</c:if > --%>
 		
 		<!--  when the user not logged in -->
-		<c:if test="${pageContext.request.userPrincipal.name==null}"> --%>
+		<c:if test="${pageContext.request.userPrincipal.name==null}"> 
 		<li><a href="<c:url value="login"></c:url>">login</a></li>
 		<li><a href="<c:url value="registration"></c:url>">Register</a></li>
 		</c:if>

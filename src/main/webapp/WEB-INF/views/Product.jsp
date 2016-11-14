@@ -31,8 +31,9 @@ src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></scrip
 	Add Products
 </h1>
 <c:url var="addAction" value="/products/add" ></c:url>
+				<div align="center">	
+<form:form method="post" action="${addAction}" commandName="products" enctype="multipart/form-data">
 
-<form:form action="${addAction}" commandName="products">
 <table>
 	<c:if test="${!empty product.name}">
 	<tr>
@@ -102,6 +103,11 @@ src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></scrip
 			<form:input path="Category" />
 		</td> 
 	</tr>
+	
+	<tr><td><form:label path="productImage"></form:label></td>
+	<tr><td><form:input type="file" path="productImage" /></td></tr>
+	
+	
 	<tr>
 		<td colspan="2">
 			<c:if test="${!empty product.name}">
@@ -117,9 +123,6 @@ src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></scrip
 </table>	
 </form:form>
 
-<c:url value="/admin/book/addBook" var="url"></c:url> 
-	<form:form method="post" action="${url}" commandName="bookFormObj" enctype="multipart/form-data">
-
 <br>
  <h3>Products List</h3>
 <c:if test="${!empty listofProducts}">
@@ -130,6 +133,7 @@ src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></scrip
 	
 	    <th width="80">Product ID</th>
 		<th width="100">Product NAME</th>
+		<th width="100">Product IMAGE</th>
 		<th width="100">Product STATUS</th>
 		<th width="100">Product DESCRIPTION</th>
 		<th width="80">Product PRICE</th>
@@ -141,6 +145,7 @@ src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></scrip
 		<tr>
 			<td>${products.id}</td>
 			<td>${products.name}</td>
+			<td> <a href="#"> <img src="<c:url value="resources/images/${products.id}.jpg"/>"/> </a></td>
 			<td>${products.status}</td>
 			<td>${products.description}</td>
 			<td>${products.price}</td>
@@ -157,11 +162,12 @@ src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></scrip
 		</tr>
 	</c:forEach>
 	</table>
+	
 </c:if>
 </div>
 </body>
 </html>
-</form:form>
+
 <script>
 $(document).ready(function(){
     $('#tg').dataTable();

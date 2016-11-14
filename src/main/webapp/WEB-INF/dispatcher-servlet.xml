@@ -23,8 +23,8 @@
 <context:component-scan base-package="daoimpl"/>
 
 
-
-<mvc:resources location="/resources/" mapping="/resources/**"/>
+<mvc:annotation-driven></mvc:annotation-driven>
+<mvc:resources location="/resources/" mapping="/resources/**"></mvc:resources>
 
 
 <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" id="viewResolver">
