@@ -9,17 +9,30 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 @Entity
 @Table(name="users")
 public class Users implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 private int userId;
+
+@NotEmpty
 private String username;
+
+@NotEmpty
 private String name;
+
+@NotEmpty
 private String email;
+
+@NotEmpty
 private String phone;
+
+@NotEmpty
 private String password;
+
 private boolean enabled;
 
 @OneToOne(mappedBy="users")

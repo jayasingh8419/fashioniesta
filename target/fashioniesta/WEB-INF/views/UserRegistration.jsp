@@ -27,6 +27,8 @@
 				<label for="email">Email</label>
 
 				<form:errors path="email" cssStyle="color: #ff0000" />
+				
+				
 				<form:input path="email" class="form-Control" />
 			</div>
 

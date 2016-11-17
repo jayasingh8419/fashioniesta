@@ -1,5 +1,7 @@
 package Models;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,12 +9,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.NotEmpty;
 
 import org.springframework.web.multipart.MultipartFile;
 
 @Entity
 @Table
-public class Products {
+public class Products implements Serializable  {
 	@Id
 	@Column(name="id") 
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -27,10 +32,20 @@ public class Products {
 	public void setProductImage(MultipartFile productImage) {
 		this.productImage = productImage;
 	}
+	
+	@NotEmpty(message="Product Name Is Mandatory")
 	private String name;
+	
+	@NotEmpty(message="Category Is Mandatory")
 	String category;
+	
+	@NotNull(message="Price Is Mandatory")
 	int price;
+	
+	@NotEmpty(message="Product Description Is Mandatory")
 	String description;
+	
+	@NotEmpty(message="Product Status Is Mandatory")
 	String status;
 
 	

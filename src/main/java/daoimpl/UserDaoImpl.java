@@ -19,10 +19,12 @@ public class UserDaoImpl implements Serializable{
 		return sessionFactory;
 	}
 
+		
 	public void setSessionFactory(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
 	}
 
+	
 	public void addUsers(Users user) {
 		Session session=sessionFactory.openSession();
 		Authorities a=new Authorities();

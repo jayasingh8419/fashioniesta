@@ -59,8 +59,9 @@ src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></scrip
 		<td>
 			<form:input path="name" />
 		</td> 
+		<td><form:errors path="name" cssClass="error" />
 	</tr>
-	<br>
+	
 	<tr>
 		<td>
 			<form:label path="status">
@@ -70,6 +71,7 @@ src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></scrip
 		<td>
 			<form:input path="status" />
 		</td> 
+		<td><form:errors path="status" cssClass="error" />
 	</tr>
 	<tr>
 		<td>
@@ -79,6 +81,7 @@ src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></scrip
 		</td>
 		<td>
 			<form:input path="description" />
+			<td><form:errors path="description" cssClass="error" />
 		</td> 
 	</tr>
 	<tr>
@@ -89,6 +92,7 @@ src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></scrip
 		</td>
 		<td>
 			<form:input path="price" />
+			<td><form:errors path="price" cssClass="error" />
 		</td>
 	</tr>
 	
@@ -101,6 +105,7 @@ src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></scrip
 		</td>
 		<td>
 			<form:input path="Category" />
+			<td><form:errors path="category" cssClass="error" />
 		</td> 
 	</tr>
 	
@@ -133,6 +138,7 @@ src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></scrip
 	
 	    <th width="80">Product ID</th>
 		<th width="100">Product NAME</th>
+		<th width="100">Product IMAGE</th>
 		<th width="100">Product STATUS</th>
 		<th width="100">Product DESCRIPTION</th>
 		<th width="80">Product PRICE</th>
@@ -144,6 +150,7 @@ src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></scrip
 		<tr>
 			<td>${products.id}</td>
 			<td>${products.name}</td>
+			<td> <a href="#"> <img src="<c:url value="resources/images/${products.id}.jpg"/>"/> </a></td>
 			<td>${products.status}</td>
 			<td>${products.description}</td>
 			<td>${products.price}</td>
@@ -171,3 +178,9 @@ $(document).ready(function(){
     $('#tg').dataTable();
 });
 </script>
+
+<style>
+	.error{
+		color:red; font-weight:bold;
+	}
+</style>

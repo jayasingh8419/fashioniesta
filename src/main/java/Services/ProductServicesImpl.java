@@ -19,8 +19,8 @@ public class ProductServicesImpl {
 
 	/*public void setpdi(ProductsDAOImpl pdi){
 		this.pdi=pdi;
-	}
-*/	
+	}*/
+
 	
 	public void addProducts(Products p) {
 		// TODO Auto-generated method stub
@@ -30,11 +30,11 @@ public class ProductServicesImpl {
 
 	
 	
-	public void updateProducts(Products p) {
+	/*public void updateProducts(Products p) {
 		// TODO Auto-generated method stub
 		this.pdi.updateProducts(p);
 		
-	}
+	}*/
 
 	
 	
@@ -48,6 +48,12 @@ public class ProductServicesImpl {
 	public Products getProductsById(int id) {
 		// TODO Auto-generated method stub
 		return this.pdi.getProductsById(id);
+	}
+
+	public void updateProducts(int id) {
+		// TODO Auto-generated method stub
+		this.pdi.updateProducts(id);
+		
 	}
 
 	

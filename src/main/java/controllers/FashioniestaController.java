@@ -36,13 +36,50 @@ public class FashioniestaController {
 	
 	@Autowired
 	private ProductServicesImpl psi;
-
+	
+	/*public void setpsi(ProductServicesImpl psi){
+	this.psi=psi;
+}
+*/
 
 	@ModelAttribute("products")
 	public Products create()
 	{
 		return new Products();
 	}
+	
+	
+@RequestMapping("/getProductsById/{id}")
+	
+	public ModelAndView getProductsById(@PathVariable(value="id") int id){
+		
+		Products p=(Products) psi.getProductsById(id);
+		//System.out.println("InSide & Before Redirect");
+		return new ModelAndView("EditProductsForm","EditProductsObj",p);
+		
+	}
+
+	
+	
+	
+	@RequestMapping(value="/edit/{id}")
+	public ModelAndView getEditForm(@PathVariable(value="id") int id){
+		
+		Products p=this.psi.getProductsById(id);
+		return new ModelAndView("EditProductsForm","EditProductsObj",p);
+	}
+	
+	
+	@RequestMapping(value="/edit", method=RequestMethod.POST)
+	public String editProducts(@ModelAttribute(value="EditProductsObj") int id){
+		psi.updateProducts(id);
+		//return "Product";
+		return "redirect:/stock";
+	}
+	
+	
+	
+
 	
 	@RequestMapping(value="/products", method= RequestMethod.GET)
 	public String listProducts(Model Models){
@@ -57,7 +94,8 @@ public class FashioniestaController {
 		if(p.getId()==0){
 			this.psi.addProducts(p);
 		}else {
-			this.psi.updateProducts(p);
+			//this.psi.updateProducts(p);
+			return "Product";
 		}
 		
 MultipartFile image=p.getProductImage();
@@ -114,12 +152,12 @@ byte[]bytes;
 		return "redirect:/stock";
 	}
 	
-	@RequestMapping("/edit/{id}")
+	/*@RequestMapping("/edit/{id}")
 	public String updateProducts(@PathVariable("id") int id,Model Models){
 		Models.addAttribute("products",this.psi.getProductsById(id));
 		Models.addAttribute("listProducts",this.psi.listofProducts());
 		return "redirect:/stock";
-	}
+	}*/
 	
 	@RequestMapping("/stock")
 	public ModelAndView loadStock()

@@ -48,11 +48,11 @@ public class ProductsDAOImpl {
 			logger.info("Product saved successfully,Product details="+p);
 		}
 		/*@Override*/
-		public void updateProducts(Products p){
+		/*public void updateProducts(Products p){
 			Session session=this.sessionFactory.getCurrentSession();
 			session.update(p);
 			logger.info("Product updated successfully,Product details="+p);
-		}
+		}*/
 		
 		/*@Override*/
 		public List<Products> listofProducts(){
@@ -71,6 +71,25 @@ public class ProductsDAOImpl {
 			logger.info("Products loaded successfully,Product Details="+p);
 			return p;
 		}
+		
+		public void updateProducts(int id){
+			Session session=this.sessionFactory.getCurrentSession();
+			Products p=(Products)session.get(Products.class, new Integer(id));
+			//logger.info("Products loaded successfully,Product Details="+p);
+			//return p;
+			session.update(p);
+		}
+		
+		/*public void editProducts(Products p) {
+			Session session=sessionFactory.openSession();
+			//session.update(p);
+			session.update(p);
+			session.flush();
+			session.close();
+			
+		}*/
+
+		
 		/*@Override*/
 		public void removeProducts(int id){
 			Session session=this.sessionFactory.getCurrentSession();
