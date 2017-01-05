@@ -35,7 +35,7 @@ src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></scrip
 <form:form method="post" action="${addAction}" commandName="EditProductsObj" enctype="multipart/form-data">
 
 <table>
-	<c:if test="${!empty product.name}">
+	<%-- <c:if test="${!empty product.name}"> --%>
 	<tr>
 		<td>
 			<form:label path="id">
@@ -47,7 +47,7 @@ src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></scrip
 			<form:hidden path="id" />
 		</td> 
 	</tr>
-	</c:if>
+<%-- 	</c:if> --%>
 
 	
 	<tr>
@@ -110,14 +110,17 @@ src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></scrip
 	
 	<tr>
 		<td colspan="2">
-			<c:if test="${!empty product.name}">
-				<input type="submit"
+			<%-- <c:if test="${!empty product.name}"> --%>
+			<%-- 	<input type="submit"
 					value="<spring:message text="Edit Products"/>" />
 			</c:if>
-			<c:if test="${empty product.name}">
+			
+			<c:if test="${empty product.name}"> --%>
+			
+			
 				<input type="submit"
 					value="<spring:message text="Edit Products"/>" />
-			</c:if>
+			<%-- </c:if> --%>
 		</td>
 	</tr>
 </table>	

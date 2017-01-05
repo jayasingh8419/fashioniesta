@@ -66,18 +66,21 @@ public class ProductsDAOImpl {
 		}
 		
 		public Products getProductsById(int id){
-			Session session=this.sessionFactory.getCurrentSession();
-			Products p=(Products)session.get(Products.class, new Integer(id));
-			logger.info("Products loaded successfully,Product Details="+p);
+			
+			Session session=sessionFactory.openSession();
+			/*Session session=this.sessionFactory.getCurrentSession();*/
+			Products p=(Products)session.get(Products.class, id);
 			return p;
 		}
+
 		
-		public void updateProducts(int id){
-			Session session=this.sessionFactory.getCurrentSession();
-			Products p=(Products)session.get(Products.class, new Integer(id));
-			//logger.info("Products loaded successfully,Product Details="+p);
-			//return p;
-			session.update(p);
+		public void updateProducts(Products p){
+			Session session=sessionFactory.openSession();
+			//session.saveOrUpdate(p);
+			session.saveOrUpdate(p);
+			session.flush();
+			session.close();
+			
 		}
 		
 		/*public void editProducts(Products p) {

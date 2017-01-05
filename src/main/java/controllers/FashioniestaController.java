@@ -53,29 +53,33 @@ public class FashioniestaController {
 	
 	public ModelAndView getProductsById(@PathVariable(value="id") int id){
 		
-		Products p=(Products) psi.getProductsById(id);
+		Products p=psi.getProductsById(id);
 		//System.out.println("InSide & Before Redirect");
 		return new ModelAndView("EditProductsForm","EditProductsObj",p);
 		
 	}
 
-	
+
 	
 	
 	@RequestMapping(value="/edit/{id}")
 	public ModelAndView getEditForm(@PathVariable(value="id") int id){
 		
 		Products p=this.psi.getProductsById(id);
+	System.out.println("in edit method");
 		return new ModelAndView("EditProductsForm","EditProductsObj",p);
 	}
 	
 	
 	@RequestMapping(value="/edit", method=RequestMethod.POST)
-	public String editProducts(@ModelAttribute(value="EditProductsObj") int id){
-		psi.updateProducts(id);
+	public String editProducts(@ModelAttribute(value="EditProductsObj") Products p){
+		psi.updateProducts(p);
+		System.out.println("in edit method2");
 		//return "Product";
-		return "redirect:/stock";
+		return "redirect:/products";
 	}
+	
+	
 	
 	
 	

@@ -50,9 +50,9 @@ public class ProductServicesImpl {
 		return this.pdi.getProductsById(id);
 	}
 
-	public void updateProducts(int id) {
+	public void updateProducts(Products p) {
 		// TODO Auto-generated method stub
-		this.pdi.updateProducts(id);
+		this.pdi.updateProducts(p);
 		
 	}
 

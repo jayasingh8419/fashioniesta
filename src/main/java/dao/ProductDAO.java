@@ -12,7 +12,7 @@ public interface ProductDAO {
 	
 	public List<Products> listProducts();
 	void addProducts(Products p);
-	void updateProducts(int id);
+	void updateProducts(Products p);
 	void removeProducts(int id);
 	/*Products getProductsById(int id);*/
 	public List<Products> viewProducts();
