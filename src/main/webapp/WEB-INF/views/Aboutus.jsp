@@ -1,84 +1,14 @@
-<html lang="en">
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    <%@ include file="/WEB-INF/views/header.jsp"%>
+    
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
-<link href="resources/cascade.css" rel="stylesheet">
-  <style>
-    /* Remove the navbar's default margin-bottom and rounded borders */
-   body{ background: #6699FF;}
-    .navbar {
-      margin-bottom: 0;
-      border-radius: 0;
-    }
-    #img
-    {
-    	height: 75px;
-    	width: 100px;
-    	margin-top:-11    }
-     </style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
 </head>
 <body>
-    <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">
-       <img id="img" alt="abc" src="resources/logoo.JPG"></a>
-      
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="http://localhost:9080/fashioniesta/NewFile.jsp">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign up</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
 
-<div class="row">
-<div class="container">
-<div class="col-md-6">
-
-<div style><img align="left" img src="resources/sale.jpg" alt="" width="200" height="200"></div>
-</div>
-</div>
-
-<div class="col-md-6">
-
-<h1 class=text-centre><Strong>Shopping At Zytara</Strong></h1><br>
-<p>Zytara shopping is a form of electronic commerce which allows consumers to directly buy fashionable apparels from a 
-seller over the Internet using a web browser.Our products ssem to be cheaper than other sites because we directly send the required product from the business man to the customer ang hence we do not have any other middle men.That is how we deliver the best possible products at cheaper rate and satisfactory shopping 
-experience to you.</p>
-</div>
-</div>
-
-
-<nav class ="navbar navbar-inverse navbar-fixed-bottom">
-  <div class="container">
-  <p class = "navbar-text">&copy2016 www.com. All rights reserved.</p>
-  <p class="txt-railway"> </p>
-    <p class="pull-right">
- 
-   				
-                <a href="https://www.facebook.com/bootsnipp"><i id="social-fb" style="padding-right:10px" class="fa fa-facebook-square fa-2x social"></i></a>
-	            <a href="https://twitter.com/bootsnipp"><i id="social-tw"style="padding-right:10px" class="fa fa-twitter-square fa-2x social"></i></a>
-	            <a href="https://plus.google.com/+Bootsnipp-page"><i id="social-gp" style="padding-right:10px" class="fa fa-google-plus-square fa-2x social"></i></a>
-	            <a href="mailto:bootsnipp@gmail.com"><i id="social-em" class="fa fa-envelope-square fa-2x social"></i></a></p>
-</div>
-</nav>
+</body>
+</html>
